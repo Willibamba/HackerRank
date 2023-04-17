@@ -12,26 +12,34 @@ import sys
 # The function is expected to return an INTEGER.
 # The function accepts INTEGER n as parameter.
 #
-precompute = [0, 1, 2, 3] 
+
 def downToZero(n):
     # Write your code here
+    temp = set()
     count = 0
-    while n >= len(precompute):
-        l = len(precompute)
-        
-        mini = precompute[l-1]
-        
-        for i in range(int((math.sqrt(l))), 1, -1):
-            if l % i == 0:
-            
-                li = int(l/i)
-                mini = min(mini, precompute[li])
-                
-                
-        precompute.insert(l, 1+mini)
-        
+    N = deque([[n, count]])
     
-    return precompute[n]
+    while N:
+        n, count = N.popleft()
+        
+        if n <= 1:
+            if n == 1:
+                count += 1
+            break
+        if n-1 not in temp:
+            temp.add(n)
+            N.append([n-1, count+1])
+            print(n-1)
+        for i in range(int(math.sqrt(n)), 1, -1):
+           
+            if n % i == 0:
+                factor = max(i, n/i)
+                if factor not in temp:
+                    temp.add(factor)
+                    N.append([factor, count+1])
+                    
+    print(temp)
+    return count
        
     
 if __name__ == '__main__':
