@@ -26,14 +26,17 @@ def downToZero(n):
             if n == 1:
                 count += 1
             break
+
         if n-1 not in temp:
-            temp.add(n)
+            temp.add(n-1)
             N.append([n-1, count+1])
             print(n-1)
+
         for i in range(int(math.sqrt(n)), 1, -1):
            
             if n % i == 0:
                 factor = max(i, n/i)
+
                 if factor not in temp:
                     temp.add(factor)
                     N.append([factor, count+1])
