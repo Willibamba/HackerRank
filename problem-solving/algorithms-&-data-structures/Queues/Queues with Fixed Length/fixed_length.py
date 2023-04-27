@@ -17,20 +17,21 @@ import sys
 
 def solve(arr, queries):
     # Write your code here
-   
     minimums = []
     
     for query in queries:
         
-        minimum = max(arr[:query])
+        minimum = maximum = max(arr[:query])
         i = 1
         while i <= len(arr)-query:
-            
-            subarrays = max(arr[i:i+query])
-            if subarrays < minimum:
+             
+            if arr[i-1] == maximum:
+               subarrays = max(arr[i:i+query])
+            else:
+                subarrays = max(maximum, arr[i]) 
                 
-                minimum = subarrays
-            
+            minimum = min(minimum, subarrays)
+            maximum = subarrays
             i += 1
         
         minimums.append(minimum)
