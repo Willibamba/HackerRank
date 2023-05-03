@@ -51,7 +51,7 @@ def height(root):
     def counter(root, height):
     
         if root == None:
-            return curr_height
+            return height
         
         left_height = counter(root.left, height + 1)
         right_height = counter(root.right, height + 1)
