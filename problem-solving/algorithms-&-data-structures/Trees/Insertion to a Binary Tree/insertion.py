@@ -35,20 +35,18 @@ class BinarySearchTree:
         # While the parent is not null, keep iterating for insertion position
         while parent:
             # If true, insert to the left-child else left-child is the parent
-            if parent.info > val:
+            if parent.info >= val:
                 if parent.left == None:
                     parent.left = Node(val)
                     return
                 parent = parent.left
             # If true, insert to the right-child else right-child is the parent   
-            elif parent.info < val:
+            elif parent.info <= val:
                 if parent.right == None:
                     parent.right = Node(val)
                     return    
-                parent = parent.right
-        
+                parent = parent.right  
 
-        
 
 tree = BinarySearchTree()
 t = int(input())
