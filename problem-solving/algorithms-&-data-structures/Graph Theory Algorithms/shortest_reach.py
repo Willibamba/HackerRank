@@ -11,12 +11,13 @@ from collections import defaultdict, deque
 #
 # The function is expected to return an INTEGER_ARRAY.
 # The function accepts following parameters:
-#  1. INTEGER n
-#  2. INTEGER m
-#  3. 2D_INTEGER_ARRAY edges
-#  4. INTEGER s
+#  1. INTEGER n                  = 5 (number of nodes)
+#  2. INTEGER m                  = 3 (number of edges)
+#  3. 2D_INTEGER_ARRAY edges     = [[1,2],[1,3],[3,4]]
+#  4. INTEGER s                  = 1 (stating point)
 #
-
+# Output sample:  = -1 ([6,6,12,-1]) each edge is +6 and node 5 is unreachable, 
+#                      so we return -1
 
 def bfs(n, m, edges, s):
     # Write your code here

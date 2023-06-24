@@ -12,9 +12,12 @@ sys.setrecursionlimit(1500) # Recursion limit for one hidden case
 #
 # The function is expected to return an INTEGER.
 # The function accepts following parameters:
-#  1. INTEGER n
-#  2. 2D_INTEGER_ARRAY astronaut
+#  1. INTEGER n                     = 5
+#  2. 2D_INTEGER_ARRAY astronaut    = [[0,1],[2,3],[0,4]]
 #
+# Sample Output: 6 (beacuase valid pairs = [[0,2],[0,3],[1,2],[1,3],[4,2],[4,3]])
+#
+
 # A DFS to keep track of visited nodes
 def dfs(visited, graph, node):
     if node not in visited:
