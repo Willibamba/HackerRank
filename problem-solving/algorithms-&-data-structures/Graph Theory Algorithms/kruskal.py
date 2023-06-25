@@ -5,6 +5,7 @@ import os
 import random
 import re
 import sys
+
 # Set recursion limit for one test case 
 sys.setrecursionlimit(1500)
 
@@ -41,19 +42,20 @@ def union(parent, u, v):
 
 def kruskals(g_nodes, g_from, g_to, g_weight):
     # Write your code here
-    # Arrays to keep track of parent and edges sorted by weight
+    # Arrays to keep track of parent and the edges sorted by weight
     parent = [i for i in range(g_nodes+1)]
     edges = [[g_from[i], g_to[i], g_weight[i]] for i in range(len(g_from))]
     edges.sort(key = lambda e:e[-1])
+
     # The main logic to find the minimum overall weight
     weight = 0
     for u, v, wt in edges:
         ux = findSet(parent, u)
         vx = findSet(parent, v)
+
         if ux != vx:
             parent = union(parent, ux, vx)
             weight += wt
-            print(parent, ux, vx)
     
     return weight
 
