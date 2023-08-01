@@ -17,6 +17,7 @@ import sys
 # Sample Input: k = 3, contests = [[5,1],[2,1],[1,1],[8,1],[10,0],[5,0]]
 #
 # Sample Output: 5 + 2 + 8 + 10 + 5 - 1 = 29
+#
 
 def luckBalance(k, contests):
     # Write your code here
