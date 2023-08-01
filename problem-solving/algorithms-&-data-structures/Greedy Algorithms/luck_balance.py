@@ -23,8 +23,8 @@ def luckBalance(k, contests):
     important = []
     unimportant = []
     
-    ''' Iterate through the contests array, if rate is 1, add luck amount in important array or 
-        rate is 0, add luck amount in unimportant array ''' 
+    ''' Iterate through the contests array, if rate is 1, add luck amount in important array else,
+        if rate is 0, add luck amount in unimportant array ''' 
     for contest in contests:
         if contest[1] == 1:
             important.append(contest[0])
@@ -34,7 +34,7 @@ def luckBalance(k, contests):
     # Sort important array in descending order and assign sum of unimpotant array to maximum luck        
     important.sort(reverse=True)
     max_luck = sum(unimportant)
-    
+
     # Calculate the maximum luck
     for i in range(len(important)):
         if i >= k:
