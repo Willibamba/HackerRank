@@ -21,18 +21,23 @@ import sys
 
 def largestPermutation(k, arr):
     # Write your code here
+    # Sort arr array in descending order 
+    desc = sorted(arr, reverse=True)
+
     # While k is greater than 0 keep looping the arr array
     for i in range(len(arr)):
         if k == 0:
             break
-            
+        # If k is greater than the length of arr array or arr array is in descending order
+        if k >= len(arr) or arr == desc:
+            return desc
+
         # Find the highest value and it's index from next index to the last index
         # If the highest value is greater than the current value swap them and decrement k by 1 
         highest = max(arr[i:])
         j = arr.index(max(arr[i:]))
         if arr[i] != highest:
             arr[j], arr[i] = arr[i], highest
-            arr[i] = highest
             k -= 1
             
     return arr                 
