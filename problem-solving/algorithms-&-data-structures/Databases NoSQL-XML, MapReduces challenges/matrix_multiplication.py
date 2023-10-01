@@ -40,7 +40,7 @@ def mapper(matrix1, matrix2):
     # Iterate through the length of matrix and matrix2[0] for indices i and j respectively
     for i in xrange(len(matrix1)):
         for j in xrange(len(matrix2[0])):
-            # Iterate through the matrix1[0] for indices k
+            # Iterate through matrix1[0] for indices k
             for k in range(len(matrix1[0])):
                 # Emit indices i and j as keys and the values of matrices wih their respective indices as values
                 mapReducer.emitIntermediate((i,j), (matrix1[i][k], matrix2[k][j]))
